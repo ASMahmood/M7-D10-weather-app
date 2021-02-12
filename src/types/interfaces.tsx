@@ -50,6 +50,7 @@ export interface apiStructure {
     wind_deg: number;
     wind_speed: number;
     uvi: number;
+    pop: number;
     weather: {
       icon: string;
       main: string;
@@ -92,6 +93,7 @@ export interface hourlyStructure {
   wind_deg: number;
   wind_speed: number;
   uvi: number;
+  pop: number;
   weather: {
     icon: string;
     main: string;

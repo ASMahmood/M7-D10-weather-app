@@ -25,6 +25,10 @@ export default function HourlyCard(props: hourlyStructure) {
         {/* <h5 className="ml-3">{props.weather[0].main.toUpperCase()}</h5> */}
       </div>
       <Card.Body className=" dailyInfo">
+        <div className="rain d-flex flex-column align-items-center">
+          <span>CHANCE OF RAIN</span>
+          <h2>{props.pop * 100}%</h2>
+        </div>
         <div className="clouds d-flex flex-column align-items-center">
           <span>CLOUD COVERAGE</span>
           <h2>{props.clouds}%</h2>

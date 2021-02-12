@@ -6,6 +6,7 @@ import SearchBar from "./components/SearchBar";
 import TodayWeather from "./components/TodayWeather";
 import DailyCol from "./components/DailyCol";
 import HourlyRow from "./components/HourlyRow";
+import "./style/App.css";
 
 function App() {
   const [apiInfo, setApiInfo] = useState<apiStructure>();

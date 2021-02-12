@@ -1,0 +1,9 @@
+@media (min-width: 992px) {
+  #side-Col {
+    position: relative !important;
+  }
+}
+#side-Col {
+  position: fixed !important;
+  right: 0;
+}
