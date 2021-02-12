@@ -37,11 +37,11 @@ export default function DailyCard(props: dailyStructure) {
         </div>
         <div className="sunrise d-flex flex-column align-items-center">
           <span>SUNRISE</span>
-          <h5>{convertUnixToReadble(props.sunrise)}</h5>
+          <h5>{convertUnixToReadble(props.sunrise + props.timezone_offset)}</h5>
         </div>
         <div className="sunset d-flex flex-column align-items-center">
           <span>SUNSET</span>
-          <h5>{convertUnixToReadble(props.sunset)}</h5>
+          <h5>{convertUnixToReadble(props.sunset + props.timezone_offset)}</h5>
         </div>
         <div className="windInfo d-flex flex-column align-items-center">
           <span>WIND SPEED</span>

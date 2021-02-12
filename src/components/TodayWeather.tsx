@@ -10,7 +10,7 @@ import {
 export default function TodayWeather(props: apiStructure) {
   return (
     <Jumbotron id="todayJumbo" className="mb-3">
-      {props.current !== undefined && (
+      {props.current !== undefined && props.timezone_offset !== undefined && (
         <>
           <Container fluid>
             <Row>
@@ -29,7 +29,9 @@ export default function TodayWeather(props: apiStructure) {
                 </div>
                 <h1>
                   {kelvinToCelsius(props.current.temp)}°C - {props.timezone} -{" "}
-                  {convertUnixToReadble(props.current.dt)}{" "}
+                  {convertUnixToReadble(
+                    props.current.dt + props.timezone_offset
+                  )}{" "}
                 </h1>
               </Col>
             </Row>
@@ -53,14 +55,22 @@ export default function TodayWeather(props: apiStructure) {
                 className="sunrise d-flex flex-column align-items-center"
               >
                 <span>SUNRISE</span>
-                <h2>{convertUnixToReadble(props.current.sunrise)}</h2>
+                <h2>
+                  {convertUnixToReadble(
+                    props.current.sunrise + props.timezone_offset
+                  )}
+                </h2>
               </Col>
               <Col
                 xs={2}
                 className="sunset d-flex flex-column align-items-center"
               >
                 <span>SUNSET</span>
-                <h2>{convertUnixToReadble(props.current.sunset)}</h2>
+                <h2>
+                  {convertUnixToReadble(
+                    props.current.sunset + props.timezone_offset
+                  )}
+                </h2>
               </Col>
               <Col
                 xs={3}

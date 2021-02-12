@@ -10,7 +10,7 @@ import "../style/HourlyCard.css";
 
 export default function HourlyCard(props: hourlyStructure) {
   return (
-    <Card>
+    <Card className="hourCard">
       <div className="dailyTop d-flex align-items-center ">
         <Card.Img
           variant="top"
@@ -21,13 +21,13 @@ export default function HourlyCard(props: hourlyStructure) {
         <h5 className="ml-3">
           {convertUnixToReadble(props.dt)} - {convertUnixToDate(props.dt)}
         </h5>
-        {/* <h5 className="ml-4">{kelvinToCelsius(props.temp)}°C</h5> */}
+        <h5 className="ml-4">{kelvinToCelsius(props.temp)}°C</h5>
         {/* <h5 className="ml-3">{props.weather[0].main.toUpperCase()}</h5> */}
       </div>
       <Card.Body className=" dailyInfo">
         <div className="rain d-flex flex-column align-items-center">
           <span>CHANCE OF RAIN</span>
-          <h2>{props.pop * 100}%</h2>
+          <h2>{Math.floor(props.pop * 100)}%</h2>
         </div>
         <div className="clouds d-flex flex-column align-items-center">
           <span>CLOUD COVERAGE</span>

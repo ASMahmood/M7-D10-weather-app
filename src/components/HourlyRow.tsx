@@ -12,11 +12,20 @@ export default function HourlyRow(props: apiStructure) {
   return (
     <div id="hourRow">
       <h4 className="ml-2">Next 24 hours:</h4>
-      {props.hourly !== undefined && (
+      {props.hourly !== undefined && props.timezone_offset !== undefined && (
         <Row>
+          {console.log(props.timezone_offset)}
           {props.hourly.slice(0, 24).map((hour, index) => (
             <Col xs={4} className="mt-3">
-              <HourlyCard key={index} {...hour} />
+              <HourlyCard
+                key={index}
+                {...hour}
+                timezone_offset={
+                  props.timezone_offset !== undefined
+                    ? props.timezone_offset + 1
+                    : 0
+                }
+              />
             </Col>
           ))}
         </Row>

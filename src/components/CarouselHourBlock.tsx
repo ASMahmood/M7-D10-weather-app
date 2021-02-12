@@ -13,6 +13,7 @@ interface Props {
     wind_speed: number;
     uvi: number;
     pop: number;
+    timezone_offset: number;
     weather: {
       icon: string;
       main: string;

@@ -69,6 +69,7 @@ export interface dailyStructure {
   sunset: number;
   wind_deg: number;
   wind_speed: number;
+  timezone_offset: number;
   weather: {
     description: string;
     main: string;
@@ -94,6 +95,7 @@ export interface hourlyStructure {
   wind_speed: number;
   uvi: number;
   pop: number;
+  timezone_offset: number;
   weather: {
     icon: string;
     main: string;

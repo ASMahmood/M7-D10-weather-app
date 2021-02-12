@@ -52,7 +52,7 @@ function App() {
   };
 
   return (
-    <Container fluid id="global-Body">
+    <Container fluid id="global-Body" className="mb-4">
       <Row>
         <Col xs={12} lg={8}>
           <TodayWeather {...apiInfo} />
