@@ -9,7 +9,7 @@ import {
 
 export default function TodayWeather(props: apiStructure) {
   return (
-    <Jumbotron id="todayJumbo">
+    <Jumbotron id="todayJumbo" className="mb-3">
       {props.current !== undefined && (
         <>
           <Container fluid>

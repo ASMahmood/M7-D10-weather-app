@@ -49,8 +49,10 @@ export interface apiStructure {
     temp: number;
     wind_deg: number;
     wind_speed: number;
+    uvi: number;
     weather: {
       icon: string;
+      main: string;
     }[];
   }[];
   timezone?: string;
@@ -89,8 +91,10 @@ export interface hourlyStructure {
   temp: number;
   wind_deg: number;
   wind_speed: number;
+  uvi: number;
   weather: {
     icon: string;
+    main: string;
   }[];
 }
 [];
