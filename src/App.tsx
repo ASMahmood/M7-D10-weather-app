@@ -4,6 +4,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import { locCoords, apiStructure } from "./types/interfaces";
 import SearchBar from "./components/SearchBar";
 import TodayWeather from "./components/TodayWeather";
+import DailyCol from "./components/DailyCol";
+import HourlyRow from "./components/HourlyRow";
 
 function App() {
   const [apiInfo, setApiInfo] = useState<apiStructure>();
@@ -51,11 +53,13 @@ function App() {
   return (
     <Container fluid id="global-Body">
       <Row>
-        <Col xs={8}>
+        <Col xs={12} lg={8}>
           <TodayWeather {...apiInfo} />
+          <HourlyRow {...apiInfo} />
         </Col>
-        <Col xs={4} id="side-Col">
+        <Col xs={12} lg={4} id="side-Col">
           <SearchBar search={getInput} />
+          <DailyCol {...apiInfo} />
         </Col>
       </Row>
     </Container>
